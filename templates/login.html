@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raíz Capital — Ingresar</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,Arial,sans-serif;background:#0f1e38;min-height:100vh;display:flex;align-items:center;justify-content:center}
+  .card{background:#fff;border-radius:16px;padding:40px 36px;width:360px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+  .logo{text-align:center;margin-bottom:28px}
+  .logo-title{font-size:22px;font-weight:700;color:#1F3864;margin-top:8px}
+  .logo-sub{font-size:12px;color:#B8972A;font-style:italic}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
+  .field input{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;color:#111;transition:border .15s}
+  .field input:focus{outline:none;border-color:#2563eb}
+  .btn{width:100%;padding:11px;background:#1F3864;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:background .15s}
+  .btn:hover{background:#2E4E8A}
+  .error{background:#fee2e2;color:#b91c1c;padding:10px 12px;border-radius:8px;font-size:13px;margin-bottom:16px}
+  .footer-txt{text-align:center;font-size:11px;color:#9ca3af;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">
+    <div style="font-size:42px">🏠</div>
+    <div class="logo-title">Raíz Capital</div>
+    <div class="logo-sub">Invertir bien empieza por confiar.</div>
+  </div>
+  {% if error %}
+  <div class="error">{{ error }}</div>
+  {% endif %}
+  <form method="POST">
+    <div class="field">
+      <label>Usuario</label>
+      <input name="username" type="text" autocomplete="username" required autofocus placeholder="tomas">
+    </div>
+    <div class="field">
+      <label>Contraseña</label>
+      <input name="password" type="password" autocomplete="current-password" required placeholder="••••••••">
+    </div>
+    <button class="btn" type="submit">Ingresar →</button>
+  </form>
+  <div class="footer-txt">Tomás Linares — Martillero Público</div>
+</div>
+</body>
+</html>
