@@ -468,7 +468,24 @@
       </div>
       <div class="field-group">
         <div class="field half"><label>Inicio contrato</label><input id="np_ini" type="date"></div>
-        <div class="field half"><label>Fin / actualización</label><input id="np_fin" type="date"></div>
+        <div class="field half"><label>Fin contrato</label><input id="np_fin" type="date"></div>
+      </div>
+      <div class="field-group">
+        <div class="field half">
+          <label>Índice actualización</label>
+          <select id="np_indice">
+            <option value="ICL">ICL — Índice Contratos Locación</option>
+            <option value="IPC">IPC — Índice Precios Consumidor</option>
+          </select>
+        </div>
+        <div class="field half">
+          <label>Actualizar cada</label>
+          <select id="np_meses">
+            <option value="3">3 meses</option>
+            <option value="4">4 meses</option>
+            <option value="6">6 meses</option>
+          </select>
+        </div>
       </div>
     </div>
     <div class="modal-footer">
