@@ -726,7 +726,7 @@ function renderDashboard() {
     <td>${payPill(p._pago||'Pendiente')}</td>
     <td>${diasPill(diasPara(p.fin))}</td>
     <td><div class="actions-cell">
-      <button class="btn btn-sm" onclick="${p._pago==='Pagado'?'togglePago('+p.id+')':'abrirModalCobro('+p.id+')'}()">${p._pago==="Pagado"?"Desmarcar":"✓ Cobrar"}</button>
+      <button class="btn btn-sm" onclick="p._pago==='Pagado'?togglePago(${p.id}):abrirModalCobro(${p.id})">${p._pago==="Pagado"?"Desmarcar":"✓ Cobrar"}</button>
       <button class="btn btn-sm btn-primary" onclick="generarRecibo(${p.id})">🧾 Recibo</button>
     </div></td>
   </tr>`).join("");
@@ -750,7 +750,7 @@ function renderPropCards() {
           <div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${progressColor(d)}"></div></div>
         </div>
         <div class="prop-actions">
-          <button class="btn btn-sm" onclick="p._pago==='Pagado'?togglePago(p.id):abrirModalCobro(p.id)">${p._pago==="Pagado"?"✗ Desmarcar":"✓ Cobrar"}</button>
+          <button class="btn btn-sm" onclick="p._pago==='Pagado'?togglePago(${p.id}):abrirModalCobro(${p.id})">${p._pago==="Pagado"?"✗ Desmarcar":"✓ Cobrar"}</button>
           <button class="btn btn-sm btn-primary" onclick="generarRecibo(${p.id})">🧾 Recibo</button>
           ${p.dias_actualizacion!==null&&p.dias_actualizacion<=30?`<button class="btn btn-sm btn-primary" style="background:var(--orange);border-color:var(--orange)" onclick="abrirModalActualizar(${p.id})">📈 Actualizar precio</button>`:""}
           <button class="btn btn-sm" onclick="editarProp(${p.id})">✏ Editar</button>
@@ -807,7 +807,7 @@ function renderPagos() {
     <td>${p._fpago?fmtDate(p._fpago):"—"}</td>
     <td>${p._descuento>0?`<span style="font-size:11px;color:var(--red)">-${fmt(p._descuento)}<br><span style="color:var(--text2)">${p._descripcion||""}</span></span>`:"—"}</td>
     <td><div class="actions-cell">
-      <button class="btn btn-sm ${p._pago==="Pagado"?"":"btn-primary"}" onclick="p._pago==='Pagado'?togglePago(p.id):abrirModalCobro(p.id)">${p._pago==="Pagado"?"✗ Desmarcar":"✓ Cobrar"}</button>
+      <button class="btn btn-sm ${p._pago==="Pagado"?"":"btn-primary"}" onclick="p._pago==='Pagado'?togglePago(${p.id}):abrirModalCobro(${p.id})">${p._pago==="Pagado"?"✗ Desmarcar":"✓ Cobrar"}</button>
       <button class="btn btn-sm btn-primary" onclick="generarRecibo(${p.id})">🧾 Recibo</button>
     </div></td>
   </tr>`).join("");
